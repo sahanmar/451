@@ -1,6 +1,7 @@
 ## Folder with Sanctions lists parsers
 
 `source` directory has raw sanction lists (e.g UN and OFAC)
+
 `parsed` directory contains parced data
 
 ### How to use
