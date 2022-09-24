@@ -20,4 +20,8 @@ The data are scraped from [RuPEP](https://rupep.org/en/persons_list/)
 python sanctions_and_peps/ru_bl_peps_parser.py -o /sanctions_and_peps/parsed/ru_bl_peps_parsed.csv
 ```
 
+Navalny list:
+
+The parsed data are taken from [OCCRP](https://www.occrp.org/en/daily/16253-navalny-s-foundation-lists-putin-s-6-000-bribe-takers-and-warmongers)
+
 PS! If doesnt work, try the absolute path
