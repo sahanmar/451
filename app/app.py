@@ -1,4 +1,5 @@
 import json
+import pandas as pd
 import streamlit as st
 from streamlit_agraph import agraph, Config
 from utils import (
@@ -19,11 +20,11 @@ SLIDER_MAX = 100
 SLIDER_DEFAULT = 50
 DEFAULT_NUM_SUBGRAPHS_TO_SHOW = 3
 GRAPH_PLOT_HEIGHT_PX = 400
-GRAPH_SIZE_RENDER_LIMIT = 30
+GRAPH_SIZE_RENDER_LIMIT = 40
 subgraphs = get_subgraph_df()
 
 with st.sidebar:
-    st.title("Corporate risks")
+    st.title("451 Corporate Risk Miner")
 
     weight_chains = (
         st.slider(
@@ -31,6 +32,7 @@ with st.sidebar:
             min_value=SLIDER_MIN,
             max_value=SLIDER_MAX,
             value=SLIDER_DEFAULT,
+            disabled=True,
         )
         / SLIDER_MAX
     )
@@ -49,6 +51,7 @@ with st.sidebar:
             min_value=SLIDER_MIN,
             max_value=SLIDER_MAX,
             value=SLIDER_DEFAULT,
+            disabled=True,
         )
         / SLIDER_MAX
     )
@@ -58,6 +61,7 @@ with st.sidebar:
             min_value=SLIDER_MIN,
             max_value=SLIDER_MAX,
             value=SLIDER_DEFAULT,
+            disabled=True,
         )
         / SLIDER_MAX
     )
@@ -67,6 +71,7 @@ with st.sidebar:
             min_value=SLIDER_MIN,
             max_value=SLIDER_MAX,
             value=SLIDER_DEFAULT,
+            disabled=True,
         )
         / SLIDER_MAX
     )
@@ -76,15 +81,18 @@ with st.sidebar:
             min_value=SLIDER_MIN,
             max_value=SLIDER_MAX,
             value=SLIDER_DEFAULT,
+            disabled=True,
         )
         / SLIDER_MAX
     )
-    # custom_names_a = st.multiselect(
-    #     label="Custom persons of interest",
-    #     options=nodes["node_id"],
-    #     default=None,
-    # )
-    custom_names_b = st.file_uploader(label="Custom persons of interest", type="csv")
+
+    custom_names = st.file_uploader(
+        label="Custom persons/companies of interest", type="csv"
+    )
+
+    if custom_names:
+        custom_names = pd.read_csv(custom_names, header=None)[0].tolist()
+        st.write(custom_names)
 
     go = st.button("Go")
 
@@ -133,25 +141,22 @@ with st.container():
                         config=Config(
                             width=round(1080 / num_subgraphs_to_display),
                             height=GRAPH_PLOT_HEIGHT_PX,
+                            nodeHighlightBehavior=True,
+                            highlightColor="#F7A7A6",
+                            directed=True,
+                            collapsible=True,
                         ),
                     )
                 else:
                     st.error("Subgraph is too large to render")
 
-                st.write(nodes_selected)
-                # # Build markdown strings for representing metadata
-                # markdown_strings = build_markdown_strings_for_node(nodes_selected)
+                # Build markdown strings for representing metadata
+                markdown_strings = build_markdown_strings_for_node(nodes_selected)
 
-                # st.markdown(":busts_in_silhouette: **People**")
-                # for p in markdown_strings["people"]:
-                #     if ("SANCTIONED" in p) or ("PEP" in p):
-                #         st.markdown(p)
-                #     else:
-                #         st.markdown(p)
+                st.markdown(":busts_in_silhouette: **People**")
+                for p in markdown_strings["people"]:
+                    st.markdown(p)
 
-                # st.markdown(":office: **Companies**")
-                # for c in markdown_strings["companies"]:
-                #     if ("SANCTIONED" in c) or ("PEP" in c):
-                #         st.markdown(c)
-                #     else:
-                #         st.markdown(c)
+                st.markdown(":office: **Companies**")
+                for c in markdown_strings["companies"]:
+                    st.markdown(c)

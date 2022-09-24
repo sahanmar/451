@@ -9,23 +9,21 @@ Peter Zatka-Haas [github](http://github.com/peterzh) [linkedin](https://www.link
 
 ## Tool Description
 
-Financial crime journalists need to dig through complex corporate ownership databases (i.e. databases of companies and the people/companies that control those companies) in order to find potentially interesting people/companies related to financial crime. They face several problems along the way:
-1. It is difficult to search across multiple publicly-available databases (UK Companies House, ICIJ Leaks, VK)
-2. There are multiple ‘risk signatures’ associated with criminal activity (e.g. Cyclical or long-chain ownership, links to sanctions, etc) and different journalists prioritise different kinds of signatures in their investigation.
-3. It is hard to prioritise which corporate ownership structures are more ‘risky’ than others
-4. It is hard to see the visualise corporate ownership with different risk signals
+Financial crime journalists need to dig through complex corporate ownership databases (i.e. databases of companies and the people/companies that control those companies) in order to find associations to criminal activity. They face several problems along the way:
+1. It is difficult to search across multiple publicly-available databases (UK Companies House, Sanction lists, ICIJ Leaks, VK)
+2. There are multiple ‘risk signatures’ associated with criminal activity (e.g. Cyclical or long-chain ownership, links to sanctions, etc) and different journalists prioritise different kinds of signatures in their investigation
+3. The number of corporate networks is overwhelming, and so it is hard to prioritise which corporate ownership structures are more ‘risky’ than others
 
-Corporate Risk Miner is a web app which evaluates different risk signatures of financial crime applied to the UK Companies House (UKCH) corporate ownership networks. These risk signatures include:
-* Cyclic ownership: (to explain.....)
+451 Corporate Risk Miner allows a user to navigate over different corporate ownership networks extracted from UK Companies House (UKCH) to identify and visualise those exhibiting risk signatures associated with financial crime. Example risk signatures include:
+* Cyclic ownership: Circular company ownership (e.g. Company A owns Company B which owns Company C which owns Company A)
 * Long-chain ownership: Long chains of corporate ownership (e.g. Person A controls company A. Company A is an officer for Company B. Company B is an officer of company C. etc)
-* Links to tax havens: Corporate networks which involve companies/people associated with tax haven jurisdictions
-* Multi-jurisdictionness: Corporate networsk which span many jurisdictions
-* Presence of proxy directors: Proxy directors are individual people who are registered as a company director but who are likely never involved in the running of the business. These people are often directors for many companies.
+* Links to tax havens: Corporate networks which involve companies/people associated with tax haven or secrecy jurisdictions
+* Presence of proxy directors: Proxy directors are individual people who are registered as a company director on paper but who are likely never involved in the running of the business.
 * Links to sanctioned entities: Official sanctioned people or companies, from sources such as the UN Sanctions List.
 * Links to politically-exposed persons (PEPs)
 * Links to disqualified directors
 
-The user can customise the relative 'importance' of each risk signature for their search. For example one user may rate 'cyclic ownership' as a less important feature than 'association with tax havens' in flagging up potentially dodgy corporate networks. One the user chooses their signature preferences, the app generates a **risk score** associated with each corporate network and displays the structure of those networks with the highest risk scores.
+The user can customise the relative importance of each risk signature for their search. The app then computes a **total risk score** for each corporate network in UKCH, and outlines the details of the most high-risk networks. The user can export these network results as a .csv file for later viewing. 
 
 ## Installation
 
@@ -58,3 +56,14 @@ This section includes any additional information that you want to mention about 
 - Potential next steps for the tool (i.e. what you would implement if you had more time)
 - Any limitations of the current implementation of the tool
 - Motivation for design/architecture decisions
+
+### Limitations
+* Limited to cliques of ??? hop distance owing to space limitation
+* Cyclicity calculation assumes an undirected graph to save computational time. This could be improved by taking into account specific directions of ownership.
+* Entity resolution for company/people entities could be improved
+* Graph visualisation for large corporate networks can be too cluttered to be useful. 
+
+### Potential next steps
+* Expand to corporate ownership databases outside of the UK, for example using OpenCorporates data.
+* Incorporate more external data sources identifying criminal or potentially-criminal activity for companies and people.
+* 
