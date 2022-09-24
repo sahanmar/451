@@ -2,8 +2,6 @@ import argparse
 import csv
 
 from lxml import etree
-from typing import Dict, List, Optional, Union
-from enum import Enum
 
 def parse_args():
     parser = argparse.ArgumentParser()
