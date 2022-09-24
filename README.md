@@ -2,7 +2,9 @@
 
 ## Team Members
 Elena Dulskyte [linkedin](https://www.linkedin.com/in/elena-dulskyte-50b83aa2/)
+
 Marko Sahan [github](http://github.com/sahanmar) [linkedin](https://www.linkedin.com/in/msahan/)
+
 Peter Zatka-Haas [github](http://github.com/peterzh) [linkedin](https://www.linkedin.com/in/peterzatkahaas)
 
 ## Tool Description
