@@ -15,7 +15,7 @@ Financial crime journalists need to dig through complex corporate ownership data
 3. It is hard to prioritise which corporate ownership structures are more ‘risky’ than others
 4. It is hard to see the visualise corporate ownership with different risk signals
 
-Corporate Risk Miner is a web app which allows users to evaluate different risk signatures of financial crime applied to the UK Companies House (UKCH) corporate ownership database. These risk signatures include:
+Corporate Risk Miner is a web app which evaluates different risk signatures of financial crime applied to the UK Companies House (UKCH) corporate ownership networks. These risk signatures include:
 * Cyclic ownership: (to explain.....)
 * Long-chain ownership: Long chains of corporate ownership (e.g. Person A controls company A. Company A is an officer for Company B. Company B is an officer of company C. etc)
 * Links to tax havens: Corporate networks which involve companies/people associated with tax haven jurisdictions
