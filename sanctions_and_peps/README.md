@@ -14,7 +14,7 @@ python sanctions/un_parser.py -i "/sanctions_and_peps/source/un.xml" -o "/sancti
 
 RU BL PEPs:
 
-The data are scraped from 
+The data are scraped from [RuPEP](https://rupep.org/en/persons_list/)
 
 ```
 python sanctions_and_peps/ru_bl_peps_parser.py -o /sanctions_and_peps/parsed/ru_bl_peps_parsed.csv
