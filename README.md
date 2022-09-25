@@ -7,6 +7,10 @@ Marko Sahan [github](http://github.com/sahanmar) [linkedin](https://www.linkedin
 
 Peter Zatka-Haas [github](http://github.com/peterzh) [linkedin](https://www.linkedin.com/in/peterzatkahaas), Data Scientist at ComplyAdvantage
 
+## Tool Demo
+
+See a <a href="https://www.youtube.com/watch?v=WeHYfiNQzvc" target="_blank">youtube video.</a>
+
 ## Tool Description
 
 Financial crime journalists need to dig through complex corporate ownership databases (i.e. databases of companies and the people/companies that control those companies) in order to find associations to criminal activity. They face several problems along the way:

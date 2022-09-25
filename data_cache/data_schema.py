@@ -8,6 +8,6 @@ schema = {
     "ukch_psc_people": "/insert_download_folder/psc_person.parquet",
 # Output locations for stream lit to consume:
     "output_nodes": "/data/networks.parquet",
-    "output_edges": "/data/edges.parquet",
+    "output_edges":  "./data/edges.parque",
     "output_networks": "/data/networks.parquet"
 }
