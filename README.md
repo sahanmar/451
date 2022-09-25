@@ -54,20 +54,20 @@ streamlit run app/app.py
 
 ## Usage
 
-- Access the app online.
-
-Data cache can either be:
-
-- Downloaded from <a href="https://drive.google.com/drive/folders/15I2-spww_5ZG6tzslLyU4gGwb3zDNZU-?usp=sharing" target="_blank">GoogleDrive.</a>
-  (Then unzipped and stored in `/data` folder.)
-
-- Recomputed with fresh UK Company House Downloads. Follow README and notebook in `/data_cache/` folder.
+See this <a href="https://www.youtube.com/watch?v=WeHYfiNQzvc" target="_blank">youtube video.</a> for an instructional video.
 
 ## Additional Information
 
 ### Data
 
 In this project we used UK Company House Datasets. All information regarding the dataset, input schema and data processing can be found in [data_cache](https://github.com/sahanmar/451/tree/main/data_cache).
+
+Data cache can either be:
+
+- Downloaded from <a href="https://drive.google.com/drive/folders/15I2-spww_5ZG6tzslLyU4gGwb3zDNZU-?usp=sharing" target="_blank">GoogleDrive.</a>
+  (Then unzipped and stored in `/data` folder.)
+
+- OR Recomputed with fresh UK Company House Downloads. Follow README and notebook in `/data_cache/` folder.
 
 #### Data enrichment
 The original UKCH data did not provide pep information. Hence, the data wes enriched with the additional information from the publicly available external datasets. We have scraped [UN sanctions](https://www.un.org/securitycouncil/content/un-sc-consolidated-list), [Russian and Belorussian PEPs](https://rupep.org/en/persons_list/) and [all politicians dataset](https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json). The scrapers, parsers and README can be found in [sanctions_and_peps](https://github.com/sahanmar/451/tree/main/sanctions_and_peps) directory.
