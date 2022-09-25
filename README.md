@@ -1,11 +1,11 @@
 # 451 Corporate Risk Miner
 
 ## Team Members
-Elena Dulskyte [github](https://github.com/ElenaDulskyte) [linkedin](https://www.linkedin.com/in/elena-dulskyte-50b83aa2/)
+Elena Dulskyte [github](https://github.com/ElenaDulskyte) [linkedin](https://www.linkedin.com/in/elena-dulskyte-50b83aa2/), Senior Data Scientist at ComplyAdvantage
 
-Marko Sahan [github](http://github.com/sahanmar) [linkedin](https://www.linkedin.com/in/msahan/)
+Marko Sahan [github](http://github.com/sahanmar) [linkedin](https://www.linkedin.com/in/msahan/), Machine Learning Engineer at ComplyAdvantage
 
-Peter Zatka-Haas [github](http://github.com/peterzh) [linkedin](https://www.linkedin.com/in/peterzatkahaas)
+Peter Zatka-Haas [github](http://github.com/peterzh) [linkedin](https://www.linkedin.com/in/peterzatkahaas), Data Scientist at ComplyAdvantage
 
 ## Tool Description
 
@@ -39,12 +39,14 @@ cd 451
 pip install -r requirements.txt
 ```
 
-4. Start the streamlit app
+4. Download dataset from XXXX to `<root dir>/data`
+
+5. Start the streamlit app
 ```
 streamlit run app/app.py
 ```
 
-5. On your web browser, load [http://localhost:8501](http://localhost:8501)
+6. On your web browser, load [http://localhost:8501](http://localhost:8501)
 
 ## Usage
 
@@ -77,4 +79,4 @@ In the final version of the app, Russian rupep.org and EveryPolitician.org were 
 ### Potential next steps
 * Expand to corporate ownership databases outside of the UK, for example using OpenCorporates data.
 * Incorporate more external data sources identifying criminal or potentially-criminal activity for companies and people.
-* Allow user to input custom lists.
+* Allow user to input custom lists as additional risk flags.
