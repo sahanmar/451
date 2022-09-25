@@ -15,13 +15,12 @@ Financial crime journalists need to dig through complex corporate ownership data
 3. The number of corporate networks is overwhelming, and so it is hard to prioritise which corporate ownership structures are more ‘risky’ than others
 
 451 Corporate Risk Miner allows a user to navigate over different corporate ownership networks extracted from UK Companies House (UKCH) to identify and visualise those exhibiting risk signatures associated with financial crime. Example risk signatures include:
-* Cyclic ownership: Circular company ownership (e.g. Company A owns Company B which owns Company C which owns Company A)
-* Long-chain ownership: Long chains of corporate ownership (e.g. Person A controls company A. Company A is an officer for Company B. Company B is an officer of company C. etc)
+* Cyclic ownership: measure of network interconnectedness (e.g. Company A owns Company B which owns Company C which owns Company A, or case when the same people direct multiple companies.)
 * Links to tax havens: Corporate networks which involve companies/people associated with tax haven or secrecy jurisdictions
-* Presence of proxy directors: Proxy directors are individual people who are registered as a company director on paper but who are likely never involved in the running of the business.
-* Links to sanctioned entities: Official sanctioned people or companies, from sources such as the UN Sanctions List.
+* Presence of proxy directors: Proxy directors are entities that have links to more than 50 companies.
 * Links to politically-exposed persons (PEPs)
-* Links to disqualified directors
+* Links to russian politicians
+
 
 The user can customise the relative importance of each risk signature for their search. The app then computes a **total risk score** for each corporate network in UKCH, and outlines the details of the most high-risk networks. The user can export these network results as a .csv file for later viewing. 
 
@@ -60,16 +59,18 @@ TBD
 In this project we used UK Company House Datasets. All information regarding the dataset, input schema and data processing can be found in [data_cache](https://github.com/sahanmar/451/tree/main/data_cache).
 
 #### Data enrichment
-The original UKCH data did not provide niether sanctioned nor pep information. Hence, the data were enriched with the additional information from the publicly available external datasets. We have scraped [UN sanctions](https://www.un.org/securitycouncil/content/un-sc-consolidated-list), [Russian and Belorussian PEPs](https://rupep.org/en/persons_list/) and [all politicians dataset](https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json). The scrapers, parsers and README can be found in [sanctions_and_peps](https://github.com/sahanmar/451/tree/main/sanctions_and_peps) directory.
-In the final version of the app, UN and All politicians were used.
+The original UKCH data did not provide pep information. Hence, the data wes enriched with the additional information from the publicly available external datasets. We have scraped [UN sanctions](https://www.un.org/securitycouncil/content/un-sc-consolidated-list), [Russian and Belorussian PEPs](https://rupep.org/en/persons_list/) and [all politicians dataset](https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json). The scrapers, parsers and README can be found in [sanctions_and_peps](https://github.com/sahanmar/451/tree/main/sanctions_and_peps) directory.
+In the final version of the app, Russian rupep.org and EveryPolitician.org were used.
 
 ### Limitations
-* Limited to cliques of ??? hop distance owing to space limitation
+* If a user wants to refresh the cached data with the latest UKCH datasets, it would need to be downloaded from UKCH company house and formatted as per data_schema/README instructions.
+* Limited to neighbourhood of 2 hop distance, when network is parto of a Giant Ownership component.
 * Cyclicity calculation assumes an undirected graph to save computational time. This could be improved by taking into account specific directions of ownership.
-* Entity resolution for company/people entities could be improved
+* Entity resolution for company/people entities could be improved. Currently linking is done on name+yob+mob.
 * Graph visualisation for large corporate networks can be too cluttered to be useful. 
 
 ### Potential next steps
 * Expand to corporate ownership databases outside of the UK, for example using OpenCorporates data.
 * Incorporate more external data sources identifying criminal or potentially-criminal activity for companies and people.
-* Add an ability to filter based on a custom list of people/companies, explain.......
+* Allow user to input custom lists of interesting people/companies. This would allow journalist to see only networks that potentially contains people of specific interest. Eg. Navalny list of 6000 russian war supporters
+
