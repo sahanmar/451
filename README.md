@@ -54,6 +54,8 @@ streamlit run app/app.py
 
 ## Usage
 
+We are uploading data online to run the app online: http://34.116.223.154:4999/
+
 See this <a href="https://www.youtube.com/watch?v=WeHYfiNQzvc" target="_blank">youtube video.</a> for an instructional video.
 
 ## Additional Information
