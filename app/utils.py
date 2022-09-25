@@ -5,8 +5,8 @@ import pandas as pd
 
 NODE_COLOUR_NON_DODGY = "#D1E2F8"
 NODE_COLOUR_DODGY = "#F99292"
-NODE_IMAGE_PERSON = "http://i.ibb.co/LrY3tfw/747376.png"  # https://www.flaticon.com/free-icon/user_747376
-NODE_IMAGE_COMPANY = "http://i.ibb.co/fx6r1dZ/4812244.png"  # https://www.flaticon.com/free-icon/company_4812244
+NODE_IMAGE_PERSON = "https://raw.githubusercontent.com/sahanmar/451/main/data/person_icon.png"  # https://www.flaticon.com/free-icon/user_747376
+NODE_IMAGE_COMPANY = "https://raw.githubusercontent.com/sahanmar/451/main/data/company_icon.png"  # https://www.flaticon.com/free-icon/company_4812244
 
 
 @st.cache()
