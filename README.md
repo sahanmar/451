@@ -39,7 +39,7 @@ cd 451
 pip install -r requirements.txt
 ```
 
-4. Download dataset from XXXX to `<root dir>/data`
+4. Download dataset from [Google Disc](https://drive.google.com/drive/folders/15I2-spww_5ZG6tzslLyU4gGwb3zDNZU-?usp=sharing) to `<root dir>/data`
 
 5. Start the streamlit app
 ```
