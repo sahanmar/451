@@ -52,10 +52,14 @@ streamlit run app/app.py
 TBD
 
 ## Additional Information
-This section includes any additional information that you want to mention about the tool, including:
-- Potential next steps for the tool (i.e. what you would implement if you had more time)
-- Any limitations of the current implementation of the tool
-- Motivation for design/architecture decisions
+
+### Data
+
+Information about UKCH, preprocessing, etc...
+
+#### Data enrichment
+The original UKCH data did not provide niether sanctioned nor pep information. Hence, the data were enriched with the additional information from the publicly available external datasets. We have scraped [UN sanctions](https://www.un.org/securitycouncil/content/un-sc-consolidated-list), [Russian and Belorussian PEPs](https://rupep.org/en/persons_list/) and [all politicians dataset](https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json). The scrapers, parsers and README can be found in [sanctions_and_peps](https://github.com/sahanmar/451/tree/main/sanctions_and_peps) directory.
+In the final version of the app, UN and All politicians were used.
 
 ### Limitations
 * Limited to cliques of ??? hop distance owing to space limitation
