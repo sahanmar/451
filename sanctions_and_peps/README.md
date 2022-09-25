@@ -2,7 +2,7 @@
 
 `source` directory has raw sanction lists
 
-`parsed` directory contains parced data
+`parsed` directory contains parsed data
 
 ## How to use
 
