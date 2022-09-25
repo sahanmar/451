@@ -48,7 +48,14 @@ streamlit run app/app.py
 
 ## Usage
 
-TBD
+- Access the app online.
+
+Data cache can either be:
+
+- Downloaded from <a href="https://drive.google.com/drive/folders/15I2-spww_5ZG6tzslLyU4gGwb3zDNZU-?usp=sharing" target="_blank">GoogleDrive.</a>
+  (Then unzipped and stored in `/data` folder.)
+
+- Recomputed with fresh UK Company House Downloads. Follow README and notebook in `/data_cache/` folder.
 
 ## Additional Information
 
