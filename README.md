@@ -1,7 +1,7 @@
 # 451 Corporate Risk Miner
 
 ## Team Members
-Elena Dulskyte [linkedin](https://www.linkedin.com/in/elena-dulskyte-50b83aa2/)
+Elena Dulskyte [github](https://github.com/ElenaDulskyte) [linkedin](https://www.linkedin.com/in/elena-dulskyte-50b83aa2/)
 
 Marko Sahan [github](http://github.com/sahanmar) [linkedin](https://www.linkedin.com/in/msahan/)
 
@@ -55,7 +55,7 @@ TBD
 
 ### Data
 
-Information about UKCH, preprocessing, etc...
+In this project we used UK Company House Datasets. All information regarding the dataset, input schema and data processing can be found in [data_cache](https://github.com/sahanmar/451/tree/main/data_cache).
 
 #### Data enrichment
 The original UKCH data did not provide niether sanctioned nor pep information. Hence, the data were enriched with the additional information from the publicly available external datasets. We have scraped [UN sanctions](https://www.un.org/securitycouncil/content/un-sc-consolidated-list), [Russian and Belorussian PEPs](https://rupep.org/en/persons_list/) and [all politicians dataset](https://raw.githubusercontent.com/everypolitician/everypolitician-data/master/countries.json). The scrapers, parsers and README can be found in [sanctions_and_peps](https://github.com/sahanmar/451/tree/main/sanctions_and_peps) directory.
